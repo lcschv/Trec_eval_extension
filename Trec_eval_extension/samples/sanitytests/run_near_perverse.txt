@@ -1,5 +1,0 @@
-0 Q0 d5 1 100 near_perverse_run
-0 Q0 d4 2 99 near_perverse_run
-0 Q0 d3 3 98 near_perverse_run
-0 Q0 d2 4 97 near_perverse_run
-0 Q0 d1 5 95 near_perverse_run

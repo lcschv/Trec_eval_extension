@@ -1,5 +1,0 @@
-0 Q0 d6 1 100 worst_run
-0 Q0 d7 2 99 worst_run
-0 Q0 d8 3 97 worst_run
-0 Q0 d9 4 97 worst_run
-0 Q0 d10 5 95 worst_run
