@@ -154,7 +154,7 @@ te_form_res_rels (const EPI *epi, const REL_INFO *rel_info,
 		     qrels_ptr->docno);
 	    return (UNDEF);
 	}
-	printf("Hola boy\n");
+	// printf("Hola boy\n");
 	qrels_ptr++;
     }
     if (NULL == (rel_levels =

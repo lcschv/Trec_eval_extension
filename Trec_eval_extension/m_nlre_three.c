@@ -16,7 +16,7 @@ double log2(double x);
 
 static int 
 te_calc_nlre_three (const EPI *epi, const REL_INFO *rel_info,
-		const RESULTS *results, const TREC_MEAS *tm, TREC_EVAL *eval);
+        const RESULTS *results, const TREC_MEAS *tm, TREC_EVAL *eval);
 static PARAMS default_nlre_three = { NULL, 0, NULL};
 
 
@@ -57,7 +57,7 @@ static float calc_lre_three(), calc_clre_three();
 
 static int 
 te_calc_nlre_three (const EPI *epi, const REL_INFO *rel_info,
-	       const RESULTS *results, const TREC_MEAS *tm, TREC_EVAL *eval)
+           const RESULTS *results, const TREC_MEAS *tm, TREC_EVAL *eval)
 {
     RES_RELS res_rels;
     long num_results;
@@ -86,16 +86,17 @@ te_calc_nlre_three (const EPI *epi, const REL_INFO *rel_info,
 
 
     if (NULL == (docno_info_ideal = te_chk_and_malloc (docno_info_ideal, &max_docno_info_ideal,
-				    num_results, sizeof (DOCNO_IDEAL_INFO))))
-	return (UNDEF);
-	
+                    num_results, sizeof (DOCNO_IDEAL_INFO))))
+    return (UNDEF);
+    
 
     if (UNDEF == te_form_res_three (epi, rel_info, results, &res_rels, &docno_info_ideal))
-	return (UNDEF);
+    return (UNDEF);
     
     max_docno_info_ideal = 0;
     error = calc_lre_three(num_results, docno_info_ideal);
     c_lre = calc_clre_three(num_results);
+    // printf("%lf --- %lf\n", error,c_lre);
     nlre = 1 - (error/c_lre);
     eval->values[tm->eval_index].value = nlre;
     
@@ -105,11 +106,12 @@ te_calc_nlre_three (const EPI *epi, const REL_INFO *rel_info,
 
 static float
 calc_lre_three(int num_results, DOCNO_IDEAL_INFO *idealrankings){
-	float LRE = 0;
-    float u =0.3333333;
-    float v = 0.3333333;
-    float x = 0.3333333;
-	int i, j, e_r, e_c, e_x;
+    float LRE = 0;
+    float u = 0.333333;
+    float v = 0.333333;
+    float x = 0.333333;
+    int i, j;
+    float e_r, e_c, e_x;
 
     /*The LRE is equal to 1 if n = 1*/
     if (num_results < 2){
@@ -117,24 +119,25 @@ calc_lre_three(int num_results, DOCNO_IDEAL_INFO *idealrankings){
     }
 
     /*Compute the Local Rank Error a ranking (LRE) */
-	for (i = 0; i < num_results; i++) {
-		j = i+1;
-		if (j < num_results){
-			e_r = MAX(0, idealrankings[i].pos_rank_rel - idealrankings[j].pos_rank_rel);
-			e_c = MAX(0, idealrankings[i].pos_rank_cred - idealrankings[j].pos_rank_cred);
+    for (i = 0; i < num_results; i++) {
+        j = i+1;
+        if (j < num_results){
+            // printf("i:%ld\n",i );
+            e_r = MAX(0, idealrankings[i].pos_rank_rel - idealrankings[j].pos_rank_rel);
+            e_c = MAX(0, idealrankings[i].pos_rank_cred - idealrankings[j].pos_rank_cred);
             e_x = MAX(0, idealrankings[i].pos_rank_third - idealrankings[j].pos_rank_third);
-
-			LRE += (((u+e_r) * (v+e_c) * (x+e_x)) - (u*v*x))/log2(i+2); /*The +2 is because the for starts from 0.*/ 
-		}
+            // printf("Errors:%lf -- %lf --- %lf \n",e_r, e_c, e_x);
+            LRE += ((((u+e_r) * (v+e_c) * (x+e_x)) - (u*v*x))/log2(i+2)); /*The +2 is because the for starts from 0.*/ 
+        }
     }
-	return (LRE);
+    return (LRE);
 }
 
 static float calc_clre_three(int num_results){
     int j;
     double u= 0.33333;
     double v=0.333333;
-    double x= 0.333333;
+    double x= 0.33333;
     float clre = 0;
 
     // FIX FOR SHORT RANKINGS //
@@ -146,8 +149,9 @@ static float calc_clre_three(int num_results){
     }
     /*This loop will compute the value of the normalisation constant.*/
     for (j = 0; j <= floor((num_results/2)-1); ++j)
-    {
+    {   
         clre += ((pow((num_results - (2*j) -1),3)) + ((u+v+x)*(num_results-(2*j)-1)))/(1+(log2(1+j)));
+        // printf("%lf\n",clre );
     }
     return (clre);
 }

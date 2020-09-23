@@ -24,7 +24,7 @@ TOP_SRCS = trec_eval.c formats.c meas_init.c meas_acc.c meas_avg.c \
 
 ## ADDED by Lucas  get_qrels_cred.c and form_res_rels_jg.c ###
 FORMAT_SRCS = get_qrels.c get_trec_results.c get_prefs.c get_qrels_prefs.c get_qrels_cred.c get_qrels_threeaspects.c \
-	get_qrels_jg.c form_res_rels.c form_res_rels_jg.c form_res_rels_cred.c form_res_three.c\
+	get_qrels_jg.c form_res_rels.c form_res_rels_jg.c form_res_rels_two.c form_res_rels_three.c form_res_rels_twoaspects.c form_res_rels_threeaspects.c form_res_rels_cred.c form_res_three.c\
         form_prefs_counts.c \
         utility_pool.c get_zscores.c convert_zscores.c
 
@@ -43,7 +43,7 @@ MEAS_SRCS =  measures.c  m_map.c m_P.c m_num_q.c m_num_ret.c m_num_rel.c \
 	m_prefs_simp_ret.c m_prefs_pair_ret.c m_prefs_avgjg_ret.c\
         m_prefs_avgjg_Rnonrel_ret.c \
 	m_prefs_simp_imp.c m_prefs_pair_imp.c m_prefs_avgjg_imp.c\
-        m_map_avgjg.c m_Rprec_mult_avgjg.c m_P_avgjg.c m_nlre.c m_nlre_three.c\
+        m_map_avgjg.c m_Rprec_mult_avgjg.c m_P_avgjg.c m_cam_three.c m_cam.c m_nlre.c m_nwcs.c m_nwcs_three.c m_cam_map.c m_cam_map_three.c m_nlre_three.c\
         
 
 SRCS = $(TOP_SRCS) $(FORMAT_SRCS) $(MEAS_SRCS)

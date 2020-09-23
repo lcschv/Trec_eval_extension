@@ -419,7 +419,6 @@ char *argv[];
 		}else if (strcmp(choice, "qrels_threeaspects") == 0){
 			for (m = 0; m < te_num_trec_measures; m++) {
 			    if (MEASURE_REQUESTED(te_trec_measures[m])) {
-
 				if (UNDEF == te_trec_measures[m]->calc_meas (&epi,
 								    &all_rel_info.threeaspects_info[j],
 								    &all_results.results[i],

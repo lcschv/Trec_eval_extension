@@ -1,0 +1,5 @@
+0 Q0 d6 1 100 worst_ties_run
+0 Q0 d7 2 100 worst_ties_run
+0 Q0 d8 3 100 worst_ties_run
+0 Q0 d9 4 100 worst_ties_run
+0 Q0 d10 5 100 worst_ties_run

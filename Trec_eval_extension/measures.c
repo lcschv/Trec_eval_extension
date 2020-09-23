@@ -113,6 +113,12 @@ extern TREC_MEAS te_meas_Rprec_mult_avgjg;
 /*Added by Lucas*/
 extern TREC_MEAS te_meas_nlre;
 extern TREC_MEAS te_meas_nlre_three;
+extern TREC_MEAS te_meas_cam;
+extern TREC_MEAS te_meas_cam_three_ndcg;
+extern TREC_MEAS te_meas_cam_map;
+extern TREC_MEAS te_meas_cam_map_three;
+extern TREC_MEAS te_meas_nwcs;
+extern TREC_MEAS te_meas_nwcs_three;
 
 TREC_MEAS *te_trec_measures[] = {
     &te_meas_runid,
@@ -168,6 +174,12 @@ TREC_MEAS *te_trec_measures[] = {
     &te_meas_Rprec_mult_avgjg,
     &te_meas_nlre, //Added by Lucas
     &te_meas_nlre_three, //Added by Lucas
+    &te_meas_cam, //Added by Lucas
+    &te_meas_cam_three_ndcg, //Added by Lucas
+    &te_meas_cam_map, //Added by Lucas
+    &te_meas_cam_map_three, //Added by Lucas
+    &te_meas_nwcs, // Added by Lucas
+    &te_meas_nwcs_three, //Added by Lucas
 };
 int te_num_trec_measures = sizeof (te_trec_measures) / sizeof (te_trec_measures[0]);
 
@@ -208,11 +220,11 @@ static char *qrels_jg_names[] = {
 
 /*Added by Lucas Chaves Lima*/
 static char *qrels_cred_names[] =  {
-    "runid","num_q", "nlre",
+    "runid","num_q", "nlre", "cam","cam_map","nwcs",
     NULL}; 
 
 static char *qrels_threeaspects_names[] =  {
-    "runid","num_q", "nlre_three",
+    "runid","num_q", "nlre_three", "cam_three_ndcg","cam_map_three","nwcs_three",
     NULL}; 
 
 
