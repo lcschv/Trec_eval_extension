@@ -1,0 +1,5 @@
+0 Q0 d1 1 100 perfect_run
+0 Q0 d2 2 99 perfect_run
+0 Q0 d3 3 98 perfect_run
+0 Q0 d4 4 97 perfect_run
+0 Q0 d5 5 95 perfect_run
