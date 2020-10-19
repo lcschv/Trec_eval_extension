@@ -24,14 +24,13 @@ static PARAMS default_nlre = { NULL, 0, NULL}; // useless
 /* See trec_eval.h for definition of TREC_MEAS */
 TREC_MEAS te_meas_nwcs =
     {"nwcs",
-     "     Normalised Weighted Cumulative Score (NWCS)\n\
+     "    Normalised Weighted Cumulative Score (NWCS)\n\
     Compute the NWCS measure according to Christina Lioma, Jakob Grue Simonsen, and\n\
     Birger Larsen in 'Evaluation Measures for Relevance and Credibility in Ranked Lists'. \n\
     In Proceedings of the ACM SIGIR International Conference on Theory of Information Retrieval (ICTIR '17)\n\
     This evaluation measure was designed to measure the effectiveness of both relevance and credibility\n\
     in ranked lists of retrieval results simultaneously and without bias in favour of either relevance or credibility\n\
-    The values are set to the appropriate relevance and credibility by default.  \n\
-    \n",
+    The values are set to the appropriate relevance and credibility by default.\n",
      te_init_meas_s_float_p_pair,
      te_calc_nwcs,
      te_acc_meas_s,
