@@ -20,7 +20,7 @@
 
 /* Measure definition:
     typedef struct trec_meas {
-        * Nmae of measure (or root name of set of measures) *
+        * Name of measure (or root name of set of measures) *
         char *name;
         * Full explanation of measure, printed upon help request *
         char *explanation;
