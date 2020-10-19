@@ -29,7 +29,7 @@ TREC_MEAS te_meas_cam =
     This evaluation measure was designed to measure the effectiveness of both relevance and credibility\n\
     in ranked lists of retrieval results simultaneously and without bias in favour of either relevance or credibility\n\
     The values are set to the appropriate relevance and credibility by default.  \n\
-    In this metric we compute the CAM of nDCG for each aspect.",
+    In this metric we compute the CAM of nDCG for each aspect.\n",
      te_init_meas_s_float_p_pair,
      te_calc_cam,
      te_acc_meas_s,

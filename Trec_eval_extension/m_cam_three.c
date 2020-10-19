@@ -22,7 +22,7 @@ static PARAMS default_ndcg_gains = { NULL, 0, NULL};
 /* See trec_eval.h for definition of TREC_MEAS */
 TREC_MEAS te_meas_cam_three_ndcg =
     {"cam_three_ndcg",
-          "    Convex aggregating measure (CAM)\n\
+     "    Convex aggregating measure (CAM)\n\
     Compute the CAM measure according to Christina Lioma, Jakob Grue Simonsen, and\n\
     Birger Larsen in 'Evaluation Measures for Relevance and Credibility in Ranked Lists'. \n\
     In Proceedings of the ACM SIGIR International Conference on Theory of Information Retrieval (ICTIR '17)\n\
@@ -30,7 +30,7 @@ TREC_MEAS te_meas_cam_three_ndcg =
     in ranked lists of retrieval results simultaneously and without bias in favour of either relevance or credibility\n\
     The values are set to the appropriate relevance and credibility by default.  \n\
     In this metric we compute the CAM of nDCG for each aspect.\n\
-    This metric was extended to handle three aspects.",
+    This metric was extended to handle three aspects.\n",
      te_init_meas_s_float_p_pair,
      te_calc_cam_three_ndcg,
      te_acc_meas_s,

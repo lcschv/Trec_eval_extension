@@ -15,15 +15,16 @@ static int
 te_calc_cam_map (const EPI *epi, const REL_INFO *rel_info,
 	     const RESULTS *results, const TREC_MEAS *tm, TREC_EVAL *eval);
 /* See trec_eval.h for definition of TREC_MEAS */
-TREC_MEAS te_meas_cam_map =  {"cam_map",
-    "    Convex aggregating measure (CAM)\n\
+TREC_MEAS te_meas_cam_map =  {
+   "cam_map",
+   "    Convex aggregating measure (CAM)\n\
     Compute the CAM measure according to Christina Lioma, Jakob Grue Simonsen, and\n\
     Birger Larsen in 'Evaluation Measures for Relevance and Credibility in Ranked Lists'. \n\
     In Proceedings of the ACM SIGIR International Conference on Theory of Information Retrieval (ICTIR '17)\n\
     This evaluation measure was designed to measure the effectiveness of both relevance and credibility\n\
     in ranked lists of retrieval results simultaneously and without bias in favour of either relevance or credibility\n\
     The values are set to the appropriate relevance and credibility by default.  \n\
-    In this metric we compute the CAM of MAP for each aspect.",
+    In this metric we compute the CAM of MAP for each aspect.\n",
      te_init_meas_s_float,
      te_calc_cam_map,
      te_acc_meas_s,

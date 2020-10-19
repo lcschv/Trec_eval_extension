@@ -23,13 +23,12 @@ static PARAMS default_nlre_three = { NULL, 0, NULL};
 /* See trec_eval.h for definition of TREC_MEAS */
 TREC_MEAS te_meas_nlre_three =
     {"nlre_three",
-          "     Normalised Local Rank Error (NLRE)\n\
+     "    Normalised Local Rank Error (NLRE)\n\
     Compute the nLRE measure according to Christina Lioma, Jakob Grue Simonsen, and\n\
     Birger Larsen in 'Evaluation Measures for Relevance and Credibility in Ranked Lists'. \n\
     In Proceedings of the ACM SIGIR International Conference on Theory of Information Retrieval (ICTIR '17)\n\
-    The default values of u, v and x are 1/3 (uniform) controling how much we wish to penalize each aspect\n \
-    so far it can only be overridden on the code. \n\
-    \n",
+    The default values of u, v and x are 1/3 (uniform) controling how much we wish to penalize each aspect\n\
+    so far it can only be overridden on the code.\n",
      te_init_meas_s_float_p_pair,
      te_calc_nlre_three,
      te_acc_meas_s,
