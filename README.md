@@ -17,11 +17,15 @@ which will show that the added measures are:
 
 ## Example usage
 
+Be sure to specify `-c` to compute averages over all topics and not only the topics in the results file.
+
+Be sure to specify `-M 1000` to limit results to 1000 documents per topic.
+
 For two aspects:
 ```
-./trec_eval -m nlre -R qrels_twoaspects samples/sanitytests/qrels_sample_twoaspects.txt samples/sanitytests/run_random.txt
+./trec_eval -c -M 1000 -m nlre -R qrels_twoaspects samples/sanitytests/qrels_sample_twoaspects.txt samples/sanitytests/run_random.txt
  ```
 For three aspects:
 ```
-./trec_eval -m nlre_three -R qrels_threeaspects samples/sanitytests/qrels_sample.txt samples/sanitytests/run_perfect.txt
+./trec_eval -c -M 1000 -m nlre_three -R qrels_threeaspects samples/sanitytests/qrels_sample.txt samples/sanitytests/run_perfect.txt
 ```
