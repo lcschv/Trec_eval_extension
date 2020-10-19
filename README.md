@@ -12,6 +12,8 @@ which will show that the added measures are:
 1. nlre_three : NLRE using NDCG on three aspects
 1. cam_three_ndcg : CAM using NDCG on three aspects
 1. cam_map_three : CAM using MAP on three aspects
+1. nwcs : NWCS for two aspects
+1. nwcs_three : NWCS for three aspects
 
 ## Example usage
 
